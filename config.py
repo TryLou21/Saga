@@ -28,21 +28,21 @@ SITES_SHAPEFILE = DATA_DIR / "sagascape-sites-EPSG32636.shp"
 @dataclass
 class Params:
     # Demand per capita
-    food_demand_pc: float = 1.15        # kg/day
-    wood_demand_pc: float = 2.35        # kg/day
-    clay_demand_pc: float = 6.0         # kg/year
+    food_demand_pc: float = 1.50        # kg/day #variable
+    wood_demand_pc: float = 1.0        # kg/day #variable
+    clay_demand_pc: float = 1.0         # kg/year #variable
 
     # Labour
-    active_percentage: float = 10.0     # % of population that works
+    active_percentage: float = 25.0     # % of population that works #variable
     agricultural_days: int   = 250      # days/year dedicated to farming
 
     # Agriculture
     grain_per_grain_yield: float = 6.0  # kg seed → kg grain
-    regeneration_time:     int   = 2    # years for fertility recovery
+    regeneration_time:     int   = 2    # years for fertility recovery #variable
 
     # Forestry / clay
     kgs_wood_per_kg_clay: float = 0.29
-    clay_threshold:       float = 0.5   # tonnes/m³
+    clay_threshold:       float = 0.25   # tonnes/m³ #variable
 
     # Disaster
     bad_harvest_interval: int = 5       # mean years between bad harvests
