@@ -1,4 +1,5 @@
 # SagaScape Python dependencies
+#libraries to install for this project
 numpy>=1.24
 scipy>=1.10
 rasterio>=1.3

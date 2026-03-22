@@ -57,6 +57,9 @@ python main.py
 # Headless (batch runs, saves PNG snapshots every 50 ticks)
 python main.py --headless --snap-every 50
 
+# Headless (batch runs, saves PNG snapshots every x ticks, x can be changed in the main file)
+python main.py --headless
+
 # Override time limit
 python main.py --ticks 200
 
@@ -68,16 +71,16 @@ Output is written to `output/metrics.csv`.
 
 ## NetLogo ↔ Python mapping
 
-| NetLogo concept        | Python equivalent                          |
-|------------------------|--------------------------------------------|
-| `patches`              | 2-D NumPy arrays in `World`               |
-| `communities` breed    | `Community` dataclass in `agents.py`      |
-| `inactive-communities` | Same class, `active=False`                |
-| `rangers` + `nw` ext.  | Scipy `dijkstra` on CSR sparse graph      |
-| `gis` extension        | `rasterio` + `geopandas`                  |
-| `palette:scale-gradient`| `LinearSegmentedColormap`               |
-| BehaviorSpace metrics  | `MetricsCollector` → `output/metrics.csv` |
-| Sliders / switches     | `Params` dataclass in `config.py`         |
+| NetLogo concept        | Python equivalent                                                                                            |
+|------------------------|--------------------------------------------------------------------------------------------------------------|
+| `patches`              | 2-D NumPy arrays in `World`                                                                                  |
+| `communities` breed    | `Community` dataclass in `agents.py`                                                                         |
+| `inactive-communities` | Same class, `active=False`                                                                                   |
+| `rangers` + `nw` ext.  | Scipy `dijkstra` on CSR sparse graph                                                                         |
+| `gis` extension        | `rasterio` + `geopandas`                                                                                     |
+| `palette:scale-gradient`| `LinearSegmentedColormap`                                                                                    |
+| BehaviorSpace metrics  | `MetricsCollector` → `output/metrics.csv`                                                                    |
+| Sliders / switches     | `Params` dataclass in `config.py` <br/> needs to be manually changed because base python do not have sliders |
 
 ## Parameter tuning
 

@@ -8,9 +8,7 @@ Change them before running a simulation.
 from dataclasses import dataclass, field
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
 # Paths
-# ---------------------------------------------------------------------------
 DATA_DIR = Path("data")
 
 RASTER_FILES = {
@@ -26,9 +24,7 @@ RASTER_FILES = {
 
 SITES_SHAPEFILE = DATA_DIR / "sagascape-sites-EPSG32636.shp"
 
-# ---------------------------------------------------------------------------
 # Simulation sliders (NetLogo interface defaults)
-# ---------------------------------------------------------------------------
 @dataclass
 class Params:
     # Demand per capita

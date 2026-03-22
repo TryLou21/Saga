@@ -26,9 +26,7 @@ from typing import Optional
 from config import RASTER_FILES, PARAMS
 
 
-# ---------------------------------------------------------------------------
 # Helper
-# ---------------------------------------------------------------------------
 
 def _load_asc(path: Path) -> np.ndarray:
     """Load an ASC raster and return a float64 array (nodata → NaN)."""
@@ -40,9 +38,7 @@ def _load_asc(path: Path) -> np.ndarray:
     return data
 
 
-# ---------------------------------------------------------------------------
 # World
-# ---------------------------------------------------------------------------
 
 class World:
     """
@@ -60,9 +56,7 @@ class World:
         self._load_rasters()
         self._init_patch_state()
 
-    # ------------------------------------------------------------------
     # Loading
-    # ------------------------------------------------------------------
 
     def _load_rasters(self) -> None:
         print("Loading rasters…")
@@ -139,10 +133,8 @@ class World:
                         for c in range(col-1, col+2)
                         if (r != row or c != col) and self.valid(r, c)]
 
-    # ------------------------------------------------------------------
     # Wood standing stock equation (Equation 6 in Suppl. Mat.)
     # S(t) = A * exp(B * age)  capped at Smax
-    # ------------------------------------------------------------------
 
     def wood_update_standing_stock(self, rows=None, cols=None) -> None:
         """

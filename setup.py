@@ -1,9 +1,9 @@
 """
 SagaScape – Setup procedures
 
-Equivalent to NetLogo's ``setup``, ``import-map``, ``setup-topo``,
-``setup-communities``, ``setup-least-cost-distances``,
-``initial-periodization``, ``setup-resources``, ``setup-regeneration``.
+Equivalent to NetLogo's `setup`, `import-map`, `setup-topo`,
+`setup-communities`, `setup-least-cost-distances`,
+`initial-periodization`, `setup-resources`, `setup-regeneration`.
 """
 
 # Afkortingen

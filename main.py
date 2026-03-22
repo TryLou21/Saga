@@ -4,14 +4,14 @@ SagaScape – Main simulation loop
 Equivalent to NetLogo's ``go`` procedure.
 
 Usage
------
+
     python main.py                        # interactive, uses config.py defaults
     python main.py --headless             # no window, saves PNG snapshots
     python main.py --ticks 200            # override time_limit
     python main.py --no-viz               # skip visualisation entirely
 
 Output (during of after the run fase)
-------
+
     output/metrics.csv    – BehaviorSpace-style per-tick × per-community data
     output/snap_NNNN.png  – optional snapshots (--headless)
 """
@@ -53,10 +53,10 @@ def main():
 
     OUTPUT_DIR.mkdir(exist_ok=True)
 
-    # ------------------------------------------------------------------ setup
+    #  setup
     world, communities = setup(params)
 
-    # ----------------------------------------------------------- visualisation
+    #  visualisation
     viz = None
     if not args.no_viz:
         if args.headless:
@@ -66,13 +66,13 @@ def main():
             from visualization import Visualizer
             viz = Visualizer(world, communities)
 
-    # -------------------------------------------------------------- collector
+    #  collector
     collector = MetricsCollector()
 
     bad_harvest_modifier = 1.0
     t0 = time.perf_counter()
 
-    # --------------------------------------------------------------- main loop
+    #  main loop
     print(f"Running simulation for {params.time_limit} ticks…")
 
     for tick in range(1, params.time_limit + 1):
@@ -122,7 +122,7 @@ def main():
                   f"forested={collector.records[-1]['forest.patches']}  "
                   f"agricultural={collector.records[-1]['agricultural.patches']}")
 
-    # ----------------------------------------------------------------- output
+    #  output
     collector.save_csv(OUTPUT_DIR / "metrics.csv")
 
     if viz is not None:

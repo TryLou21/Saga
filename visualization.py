@@ -28,9 +28,7 @@ from world import World
 from agents import Community
 
 
-# ---------------------------------------------------------------------------
 # Colour helpers (matching NetLogo palette:scale-gradient calls)
-# ---------------------------------------------------------------------------
 
 def _make_cmap(colors_rgb: list[tuple], name: str) -> LinearSegmentedColormap:
     colors_01 = [(r/255, g/255, b/255) for r, g, b in colors_rgb]
@@ -43,9 +41,7 @@ AGRI_CMAP   = _make_cmap([(153, 52, 4), (254, 217, 142)],              "agricult
 CLAY_CMAP   = _make_cmap([(0, 0, 0), (255, 255, 255)],                 "clay")
 
 
-# ---------------------------------------------------------------------------
 # Main visualiser class
-# ---------------------------------------------------------------------------
 
 class Visualizer:
     def __init__(self, world: World,
@@ -150,9 +146,7 @@ class Visualizer:
         plt.close(self.fig)
 
 
-# ---------------------------------------------------------------------------
 # Headless snapshot (for batch runs)
-# ---------------------------------------------------------------------------
 
 def save_snapshot(world: World,
                   communities: list[Community],

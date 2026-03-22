@@ -33,9 +33,7 @@ from agents import Community
 from config import PARAMS
 
 
-# ---------------------------------------------------------------------------
 # Helpers
-# ---------------------------------------------------------------------------
 
 def _fmt_community_metric(communities: List[Community],
                            getter,
@@ -56,9 +54,7 @@ def _fmt_community_metric(communities: List[Community],
     return " ".join(parts)
 
 
-# ---------------------------------------------------------------------------
 # Collector
-# ---------------------------------------------------------------------------
 
 class MetricsCollector:
     """
