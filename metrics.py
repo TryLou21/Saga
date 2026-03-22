@@ -1,11 +1,11 @@
 """
 SagaScape – Metrics & output
-
+=============================
 Genereert een CSV in exact hetzelfde formaat als NetLogo's BehaviorSpace output,
 zodat het R-script (SAGAscape_Output_analysis.R) er direct mee werkt.
 
 NetLogo BehaviorSpace CSV structuur
-
+-------------------------------------
 Rij 1:  "BehaviorSpace results (NetLogo ...)"
 Rij 2:  leeg
 Rij 3:  experimentnaam
@@ -33,7 +33,9 @@ from agents import Community
 from config import PARAMS
 
 
+# ---------------------------------------------------------------------------
 # Helpers
+# ---------------------------------------------------------------------------
 
 def _fmt_community_metric(communities: List[Community],
                            getter,
@@ -54,7 +56,9 @@ def _fmt_community_metric(communities: List[Community],
     return " ".join(parts)
 
 
+# ---------------------------------------------------------------------------
 # Collector
+# ---------------------------------------------------------------------------
 
 class MetricsCollector:
     """
@@ -123,6 +127,7 @@ class MetricsCollector:
             "[run number]",
             "agricultural-days",
             "regeneration-time",
+            "landuse-visualization",   # wordt verwijderd door R (positie 4, exact zoals NetLogo)
             "territory",
             "forest-regrowth-lag",
             "clay-demand-pc",
@@ -133,8 +138,7 @@ class MetricsCollector:
             "active-percentage",
             "wood-demand-pc",
             "bad-harvest-interval",
-            "landuse-visualization",   # wordt verwijderd door R
-            "time-limit",              # wordt verwijderd door R
+            "time-limit",              # wordt verwijderd door R (positie 15, exact zoals NetLogo)
         ]
 
         metric_headers = [
@@ -159,6 +163,7 @@ class MetricsCollector:
             run,
             p.agricultural_days,
             p.regeneration_time,
+            str(p.landuse_visualization).lower(),  # positie 4, exact zoals NetLogo
             p.territory,
             p.forest_regrowth_lag,
             p.clay_demand_pc,
@@ -169,7 +174,6 @@ class MetricsCollector:
             p.active_percentage,
             p.wood_demand_pc,
             p.bad_harvest_interval,
-            str(p.landuse_visualization).lower(),  # "true" / "false"
             p.time_limit,
         ]
 
