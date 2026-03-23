@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import LinearSegmentedColormap
 
 from world import World
-from agents import Community
+from communities import Community
 
 
 # Colour helpers (matching NetLogo palette:scale-gradient calls)

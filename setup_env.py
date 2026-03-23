@@ -28,9 +28,9 @@ import geopandas as gpd
 from scipy.sparse.csgraph import dijkstra
 from scipy.sparse import csr_matrix
 
-from config import PARAMS, SITES_SHAPEFILE
+from configuration import PARAMS, SITES_SHAPEFILE
 from world import World
-from agents import Community, make_community
+from communities import Community, make_community
 
 
 # 1.  Topology setup
@@ -123,7 +123,7 @@ def setup_communities(world: World, params=PARAMS) -> list[Community]:
 
 def _geo_to_pixel(world: World, lon: float, lat: float) -> tuple[float, float]:
     import rasterio
-    from config import RASTER_FILES
+    from configuration import RASTER_FILES
     with rasterio.open(RASTER_FILES["elevation"]) as src:
         transform = src.transform
     col, row = ~transform * (lon, lat)
@@ -244,7 +244,7 @@ def setup_resources(world: World,
                     communities: list[Community],
                     params=PARAMS) -> None:
     import rasterio
-    from config import RASTER_FILES
+    from configuration import RASTER_FILES
 
     print("Setting up resources…")
 

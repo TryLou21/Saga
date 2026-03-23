@@ -26,9 +26,9 @@ Equivalent to NetLogo's ``go`` sub-procedures:
 from __future__ import annotations
 
 import numpy as np
-from config import PARAMS
+from configuration import PARAMS
 from world import World
-from agents import Community
+from communities import Community
 
 
 # ---------------------------------------------------------------------------

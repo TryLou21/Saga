@@ -23,7 +23,7 @@ from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Optional
 
-from config import RASTER_FILES, PARAMS
+from configuration import RASTER_FILES, PARAMS
 
 
 # Helper

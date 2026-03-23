@@ -29,8 +29,8 @@ from pathlib import Path
 from typing import List
 
 from world import World
-from agents import Community
-from config import PARAMS
+from communities import Community
+from configuration import PARAMS
 
 
 # ---------------------------------------------------------------------------

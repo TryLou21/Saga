@@ -7,10 +7,10 @@ translated from NetLogo 7 to Python.
 
 ```
 sagascape/
-├── config.py          # All parameters (sliders/switches from NetLogo UI)
+├── configuration.py          # All parameters (sliders/switches from NetLogo UI)
 ├── world.py           # Patch grid – raster state arrays
-├── agents.py          # Community agent class
-├── setup.py           # Setup procedures (topo, communities, LCA, resources…)
+├── communities.py          # Community agent class
+├── setup_env.py           # Setup procedures (topo, communities, LCA, resources…)
 ├── procedures.py      # Tick procedures (exploit, burn, regenerate, disaster)
 ├── visualization.py   # Matplotlib visualisation
 ├── metrics.py         # Output collection → CSV

@@ -5,7 +5,7 @@ Equivalent to NetLogo's ``go`` procedure.
 
 Usage
 
-    python main.py                        # interactive, uses config.py defaults
+    python main.py                        # interactive, uses configuration.py defaults
     python main.py --headless             # no window, saves PNG snapshots
     python main.py --ticks 200            # override time_limit
     python main.py --no-viz               # skip visualisation entirely
@@ -22,8 +22,8 @@ import argparse
 import time
 from pathlib import Path
 
-from config import PARAMS
-from setup import setup
+from configuration import PARAMS
+from setup_env import setup
 from procedures import (exploit_resources, burn_resources, regenerate,
                         reset_community_workdays, disaster, add_sites)
 from metrics import MetricsCollector
